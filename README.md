@@ -3,6 +3,10 @@
 A clean, minimal, and modern Todo List web app built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.  
 Supports full CRUD operations with animation and dark mode.
 
+🎥 **Project Walkthrough Video**  
+This project includes a short video walkthrough explaining the features and design decisions.  
+▶️ [Watch on Google Drive](https://drive.google.com/file/d/[https://drive.google.com/file/d/1lfU4DcSUoIQrmjcCX_dAnOu7kobISiNr/view?usp=sharing]/view)
+
 ---
 
 ## ✨ Features
