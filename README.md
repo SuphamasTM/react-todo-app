@@ -36,8 +36,6 @@ This project includes a short video walkthrough explaining the features and desi
 
 ## ❓ Why this stack
 
-> Choosing the right stack helps build a UI that's both developer-friendly and user-centric.
-
 - **React (w/ Hooks):** Lightweight and declarative, ideal for component-driven UI
 - **TypeScript:** Prevents bugs, improves autocompletion and refactoring
 - **Tailwind CSS:** Speeds up styling, supports responsive and dark mode easily
