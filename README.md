@@ -49,7 +49,7 @@ This project includes a short video walkthrough explaining the features and desi
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/react-todo-app.git
+git clone https://github.com/SuphamasTM/react-todo-app.git
 cd react-todo-app
 ```
 
