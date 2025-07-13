@@ -44,7 +44,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: Props) {
         }
       >
         <div className="flex items-start gap-3 min-w-0">
-          <div
+          <button
             className="w-6 h-6 flex-shrink-0 mt-0.5 relative cursor-pointer"
             onClick={handleToggle}
           >
@@ -81,7 +81,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: Props) {
               className="absolute opacity-0 w-0 h-0"
               aria-label={isChecked ? "Mark as incomplete" : "Mark as complete"}
             />
-          </div>
+          </button>
 
           <span
             className={`break-words ${
@@ -103,7 +103,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: Props) {
             <img
               src={editIcon}
               alt="Edit"
-              className="w-4 h-4 brightness-0 invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%] dark:invert-[87%] dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-[100%] dark:contrast-[89%]"
+              className="w-4 h-4 invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%] dark:invert-[87%] dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-[100%] dark:contrast-[89%]"
             />
           </button>
           <button
@@ -115,7 +115,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: Props) {
             <img
               src={trashIcon}
               alt="Delete"
-              className="w-4 h-4 brightness-0 invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%] dark:invert-[87%] dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-[100%] dark:contrast-[89%]"
+              className="w-4 h-4 invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%] dark:invert-[87%] dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-[100%] dark:contrast-[89%]"
             />
           </button>
         </div>

@@ -23,8 +23,8 @@ export default function App() {
             alt={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             className={`w-5 h-5 ${
               darkMode
-                ? "brightness-0 invert-[87%] sepia-0 saturate-0 hue-rotate-0 brightness-[100%] contrast-[89%]" // สีขาว/เทาอ่อน สำหรับ sun icon
-                : "brightness-0 invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%]" // สีเทาเข้ม สำหรับ moon icon
+                ? "invert-[87%] sepia-0 saturate-0 hue-rotate-0 brightness-[100%] contrast-[89%]"
+                : "invert-[47%] sepia-[6%] saturate-[24%] hue-rotate-[314deg] brightness-[98%] contrast-[86%]"
             }`}
           />
         </button>

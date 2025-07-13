@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 type EditModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (newValue: string) => void;
-  initialValue: string;
-  title?: string;
+  readonly isOpen: boolean;
+  readonly onClose: () => void;
+  readonly onSave: (newValue: string) => void;
+  readonly initialValue: string;
+  readonly title?: string;
 };
 
 export function EditModal({

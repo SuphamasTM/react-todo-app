@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { fetchTodos } from "../services/api";
 import type { Todo } from "../types/todo";
 import { TodoItem } from "../components/TodoItem";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [newTodo, setNewTodo] = useState("");
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     fetchTodos()
@@ -16,6 +17,25 @@ export function TodoList() {
       .catch(() => setError("Failed to load todos"))
       .finally(() => setLoading(false));
   }, []);
+
+  // ตรวจจับการเลื่อนหน้าจอ
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setShowScrollTop(scrollTop > 200); // แสดงปุ่มเมื่อเลื่อนลงมากกว่า 200px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ฟังก์ชันเลื่อนกลับไปข้างบน
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleToggle = (id: number) => {
     setTodos((todos) =>
@@ -152,6 +172,37 @@ export function TodoList() {
           )}
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 z-50"
+            aria-label="Back to top"
+            title="Back to top"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 15l7-7 7 7"
+              />
+            </svg>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
