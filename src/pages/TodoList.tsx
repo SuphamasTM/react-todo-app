@@ -95,7 +95,6 @@ export function TodoList() {
             onKeyDown={(e) => {
               if (e.key === "Enter") handleAdd();
             }}
-            autoFocus
           />
           <button
             onClick={handleAdd}
